@@ -14,7 +14,9 @@ public class WebScrape {
             for (Element e : element.select("tr")){
                 //String img = e.select("td.posterColumn img").attr("src");
                 String title = e.select("td.posterColumn img").attr("alt");
-                String year = e.select("td.titleColumn span.secondaryInfo").text().replaceAll("[^\\d]", "");
+                String year = e.select("td.titleColumn span.secondaryInfo")
+                    .text()
+                    .replaceAll("[^\\d]", "");
                 String rate = e.select("td.ratingColumn.imdbRating").text();
                 System.out.println(year);
                 System.out.println(rate);
